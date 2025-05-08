@@ -1,6 +1,6 @@
 ## Group Members
 
-Boxuan Hu, Xinchang Meng, Kan Zhou
+Team Member A, Kira Meng, Team Member B
 
 ## Prerequisites
 
@@ -32,34 +32,34 @@ Next, the program then starts crawling the website by sending HTTP GET requests 
 
 ## Work Breakdown
 
-### Xinchang Meng
+### Kira Meng
 
 Finished Start crawling function. The function implements the basic web crawler by parsing through the HTML content of the current URL and searching for more URLs and/or secret flags until all secret flags are found for the user. The function also accounts for and appropriately handles different errors received when parsing through pages, such as redirect pages, response codes in the 4xx (client errors) and 5xx (server errors) ranges, and the cases where the response code is in the 2xx (success) range by using proper helper functions.
 
-### Boxuan Hu
+### Team Member A
 
 I finished all the codes before starting crawling, including parsing username and password, getting the root page and login page, receiving messages, extracting session cookie, csrf cookie, csrf middleware token and sending post request using the credentials extracted before.
 
-### Kan Zhou
+### Team Member B
 
 Finished the constructor of FakebookHTMLParser, which extends the HTMLParser class. I override three methods in FakebookHTMLParser class.
 Override three methods: handle_starttag, handle_endtag, handle_data
 
 ## Testing & Challenges
 
-### Xinchang Meng
+### Kira Meng
 
 Handling authentication errors: The code assumes that the authentication process will always succeed. However, if the server changes the authentication mechanism or requires additional parameters, the code may not be able to log in properly. 2.Parsing complex HTML: The FakebookHTMLParser class assumes that the HTML content it receives is well-formed and structured. If the HTML is malformed or contains unexpected elements, the parser may not work as expected.
 
 I did test manually, involved navigating the website manually to verify that the crawler is properly following links, extracting content, and handling errors. This was time-consuming, but it helped me to uncover issues that may not be apparent from automated testing alone.
 
-### Boxuan Hu
+### Team Member A
 
 I tested my code by printing out the received html content and do the check mannually. When extracting cookies and tokens, I will print out both received html content and cookies to see if they are matched. When writing code to log in user, I print out the html content, if it’s a webpage containing friends’ name and links, then it’s successful, otherwise, something goes wrong.
 
 The biggest challenge I faced is extracting cookies and tokens from response messages. I have to manipulate the strings and manually try again and again to find the correct way to extract credentials in the correct format.
 
-### Kan Zhou
+### Team Member B
 
 I am currently using a match loop to match tags in my code, but I am facing some challenges in regards to posting and getting protocols. I have tested my code using various other codes.
 # WebCrawler
